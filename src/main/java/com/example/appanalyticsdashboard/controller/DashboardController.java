@@ -18,9 +18,9 @@ public class DashboardController {
         this.eventService = eventService;
     }
     @GetMapping("/")
-    @ResponseBody
     public String home() {
-        return "Spring Boot is Working!";
+        return "home";
     }
+
 
 }

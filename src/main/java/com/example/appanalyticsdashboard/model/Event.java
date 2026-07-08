@@ -1,8 +1,8 @@
 package com.example.appanalyticsdashboard.model;
 
 import jakarta.persistence.*;
-import jakarta.websocket.Session;
 import lombok.Data;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -16,13 +16,15 @@ public class Event {
 
     @ManyToOne
     @JoinColumn(name = "session_id")
-    private Session session;   // now correctly resolves to your own Session entity
+    private Session session;
 
     @ManyToOne
     @JoinColumn(name = "screen_id")
-    private com.example.appanalyticsdashboard.model.Screen screen;
+    private Screen screen;
 
-    private String eventType;
-    private String eventLabel;
+    private String eventType; // click, view, purchase, tap, error, scroll
+
+    private String eventLabel; // e.g. "click_1"
+
     private LocalDateTime timestamp;
 }

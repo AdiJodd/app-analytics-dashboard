@@ -3,5 +3,6 @@ target/
 *.iml
 .env
 .mvn/
+build/
 !.mvn/wrapper/maven-wrapper.jar
 application-local.properties
